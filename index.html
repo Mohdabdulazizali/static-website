@@ -3,35 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Website</title>
+    <title>AWS Cloud Website</title>
 
     <style>
 
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
         body{
-            background:#141e30;
+            background:#0f172a;
             color:white;
+        }
+
+        header{
+            background:#111827;
+            padding:20px 50px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        header h1{
+            color:#38bdf8;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#38bdf8;
+        }
+
+        .hero{
+            height:90vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
             text-align:center;
-            font-family:Arial;
-            margin-top:100px;
+            background:linear-gradient(to right,#0f172a,#1e293b);
         }
 
-        h1{
-            font-size:50px;
+        .hero h2{
+            font-size:60px;
+            margin-bottom:20px;
         }
 
-        p{
-            font-size:25px;
+        .hero p{
+            font-size:24px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            background:#38bdf8;
+            padding:15px 30px;
+            text-decoration:none;
+            color:white;
+            border-radius:5px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#0284c7;
+        }
+
+        .services{
+            padding:80px 50px;
+            text-align:center;
+        }
+
+        .services h2{
+            margin-bottom:40px;
+            font-size:40px;
+        }
+
+        .cards{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            background:#1e293b;
+            padding:30px;
+            width:300px;
+            border-radius:10px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h3{
+            margin-bottom:15px;
+            color:#38bdf8;
+        }
+
+        footer{
+            background:#111827;
+            text-align:center;
+            padding:20px;
+            margin-top:50px;
         }
 
     </style>
-
 </head>
 
 <body>
 
-    <h1>Welcome to AWS EC2</h1>
+    <header>
+        <h1>AWS Website</h1>
 
-    <p>Static Website Hosted Successfully</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+
+        <h2>Welcome to AWS EC2 Hosting</h2>
+
+        <p>Static Website Hosted Using Apache Web Server</p>
+
+        <a href="#" class="btn">Website Running Successfully</a>
+
+    </section>
+
+    <section class="services">
+
+        <h2>Our Services</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Cloud Hosting</h3>
+                <p>Fast and secure website hosting using AWS cloud infrastructure.</p>
+            </div>
+
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>Modern responsive website development using HTML and CSS.</p>
+            </div>
+
+            <div class="card">
+                <h3>GitHub Deployment</h3>
+                <p>Deploy projects directly from GitHub repositories to EC2.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Created using AWS EC2 + Apache + GitHub</p>
+    </footer>
 
 </body>
 </html>

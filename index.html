@@ -1,175 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWS Cloud Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flipkart Clone</title>
 
-    <style>
+<style>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, sans-serif;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
 
-        body{
-            background:#0f172a;
-            color:white;
-        }
+body{
+background:#f1f3f6;
+}
 
-        header{
-            background:#111827;
-            padding:20px 50px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
+/* Navbar */
 
-        header h1{
-            color:#38bdf8;
-        }
+.navbar{
+background:#2874f0;
+padding:15px;
+display:flex;
+justify-content:space-around;
+align-items:center;
+color:white;
+position:sticky;
+top:0;
+}
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin-left:20px;
-            transition:0.3s;
-        }
+.logo{
+font-size:32px;
+font-weight:bold;
+}
 
-        nav a:hover{
-            color:#38bdf8;
-        }
+.search-box input{
+width:450px;
+padding:10px;
+border:none;
+border-radius:4px;
+}
 
-        .hero{
-            height:90vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            background:linear-gradient(to right,#0f172a,#1e293b);
-        }
+.nav-buttons button{
+padding:10px 20px;
+margin-left:10px;
+border:none;
+background:white;
+color:#2874f0;
+font-weight:bold;
+cursor:pointer;
+border-radius:5px;
+}
 
-        .hero h2{
-            font-size:60px;
-            margin-bottom:20px;
-        }
+/* Categories */
 
-        .hero p{
-            font-size:24px;
-            margin-bottom:30px;
-        }
+.categories{
+display:flex;
+justify-content:space-around;
+background:white;
+padding:20px;
+font-weight:bold;
+margin-top:5px;
+}
 
-        .btn{
-            background:#38bdf8;
-            padding:15px 30px;
-            text-decoration:none;
-            color:white;
-            border-radius:5px;
-            transition:0.3s;
-        }
+.categories div:hover{
+color:#2874f0;
+cursor:pointer;
+}
 
-        .btn:hover{
-            background:#0284c7;
-        }
+/* Banner */
 
-        .services{
-            padding:80px 50px;
-            text-align:center;
-        }
+.banner{
+height:350px;
+background:linear-gradient(to right,#2874f0,#00c6ff);
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+}
 
-        .services h2{
-            margin-bottom:40px;
-            font-size:40px;
-        }
+.banner h1{
+font-size:60px;
+}
 
-        .cards{
-            display:flex;
-            justify-content:center;
-            gap:30px;
-            flex-wrap:wrap;
-        }
+.banner p{
+font-size:28px;
+margin-top:10px;
+}
 
-        .card{
-            background:#1e293b;
-            padding:30px;
-            width:300px;
-            border-radius:10px;
-            transition:0.3s;
-        }
+/* Products */
 
-        .card:hover{
-            transform:translateY(-10px);
-        }
+.products{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:30px;
+}
 
-        .card h3{
-            margin-bottom:15px;
-            color:#38bdf8;
-        }
+.card{
+background:white;
+width:250px;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+transition:0.3s;
+text-align:center;
+}
 
-        footer{
-            background:#111827;
-            text-align:center;
-            padding:20px;
-            margin-top:50px;
-        }
+.card:hover{
+transform:scale(1.05);
+}
 
-    </style>
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card h3{
+margin-top:10px;
+}
+
+.price{
+color:green;
+font-size:22px;
+margin:10px 0;
+}
+
+.card button{
+background:#2874f0;
+color:white;
+border:none;
+padding:10px 20px;
+cursor:pointer;
+border-radius:5px;
+}
+
+.card button:hover{
+background:#005ce6;
+}
+
+/* Footer */
+
+footer{
+background:#172337;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:20px;
+}
+
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>AWS Website</h1>
+<!-- Navbar -->
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+<div class="navbar">
 
-    <section class="hero">
+<div class="logo">
+Flipkart
+</div>
 
-        <h2>Welcome to AWS EC2 Hosting</h2>
+<div class="search-box">
+<input type="text" placeholder="Search for products, brands and more">
+</div>
 
-        <p>Static Website Hosted Using Apache Web Server</p>
+<div class="nav-buttons">
+<button onclick="login()">Login</button>
+<button onclick="cart()">Cart</button>
+</div>
 
-        <a href="#" class="btn">Website Running Successfully</a>
+</div>
 
-    </section>
+<!-- Categories -->
 
-    <section class="services">
+<div class="categories">
 
-        <h2>Our Services</h2>
+<div>Mobiles</div>
+<div>Fashion</div>
+<div>Electronics</div>
+<div>Home</div>
+<div>Appliances</div>
+<div>Travel</div>
+<div>Beauty</div>
 
-        <div class="cards">
+</div>
 
-            <div class="card">
-                <h3>Cloud Hosting</h3>
-                <p>Fast and secure website hosting using AWS cloud infrastructure.</p>
-            </div>
+<!-- Banner -->
 
-            <div class="card">
-                <h3>Web Development</h3>
-                <p>Modern responsive website development using HTML and CSS.</p>
-            </div>
+<div class="banner">
 
-            <div class="card">
-                <h3>GitHub Deployment</h3>
-                <p>Deploy projects directly from GitHub repositories to EC2.</p>
-            </div>
+<h1>Big Billion Days</h1>
 
-        </div>
+<p>Up to 70% OFF</p>
 
-    </section>
+</div>
 
-    <footer>
-        <p>Created using AWS EC2 + Apache + GitHub</p>
-    </footer>
+<!-- Products -->
+
+<div class="products">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800">
+
+<h3>iPhone 15</h3>
+
+<div class="price">₹79,999</div>
+
+<button onclick="buyNow()">Buy Now</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=800">
+
+<h3>Laptop</h3>
+
+<div class="price">₹55,999</div>
+
+<button onclick="buyNow()">Buy Now</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=800">
+
+<h3>Headphones</h3>
+
+<div class="price">₹1,999</div>
+
+<button onclick="buyNow()">Buy Now</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=800">
+
+<h3>Smart Watch</h3>
+
+<div class="price">₹2,999</div>
+
+<button onclick="buyNow()">Buy Now</button>
+
+</div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+<h2>Flipkart Clone Website</h2>
+
+<p>Hosted on AWS EC2 using Apache Web Server</p>
+
+</footer>
+
+<script>
+
+function buyNow(){
+alert("Product Added Successfully!");
+}
+
+function login(){
+alert("Login Feature Coming Soon!");
+}
+
+function cart(){
+alert("Cart is Empty!");
+}
+
+</script>
 
 </body>
 </html>
